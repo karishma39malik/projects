@@ -1,0 +1,31 @@
+import os
+from docling.document_converter import DocumentConverter
+
+def extract_content_with_docling(source_path_or_url):
+    """
+    Extracts text and code blocks from a document using Docling and prints it as Markdown.
+    """
+    try:
+        # Initialize the DocumentConverter
+        converter = DocumentConverter()
+
+        # Convert the document into a structured DoclingDocument object
+        result = converter.convert(source_path_or_url)
+
+        # Export the structured document to Markdown format
+        markdown_content = result.document.export_to_markdown()
+
+        print("--- Extracted Content (Markdown) ---")
+        print(markdown_content)
+        print("--------------------------------------")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# --- Configuration Section ---
+# Choose your input:
+
+# Use a URL to a publicly accessible document:
+# Note: Ensure the URL points directly to the document file (e.g., a PDF link)
+public_url = "https://investindxb.com/wp-content/uploads/2024/05/DAMAC-RIVERSIDE-BROCHURE-investindxb.pdf" # Example URL from Docling docs
+extract_content_with_docling(public_url) # This is the default run option
