@@ -1,0 +1,47 @@
+# Core framework for building Retrieval-Augmented Generation (RAG) pipelines,
+# including indexing, retrieval, and query orchestration.
+llama-index
+
+# Enables document ingestion and parsing using Docling for PDFs and enterprise documents.
+llama-index-readers-docling
+
+# Provides integration to generate vector embeddings using Ollama-hosted models.
+llama-index-embeddings-ollama
+
+# Enables interaction with large language models served via Ollama.
+llama-index-llms-ollama
+
+llama-index-retrievers-bm25
+llama-index-vector-stores-postgres
+llama-index-storage-docstore-postgres
+
+python-dotenv
+psycopg2-binary
+
+# Framework for orchestrating multi-agent workflows with role-based reasoning.
+crewai
+
+crewai-tools
+
+# Framework used to evaluate RAG pipelines on relevance, faithfulness, and answer quality.
+ragas
+
+datasets
+rank_bm25
+sentencepiece
+docling-ibm-models[mlx]
+
+# Lightweight API framework used to expose services and query endpoints.
+fastapi
+
+# ASGI server used to run FastAPI applications.
+uvicorn
+
+openinference-instrumentation-crewai
+openinference-instrumentation-litellm
+
+# Observability and tracing platform for monitoring AI and LLM workflows.
+arize-phoenix-otel
+
+# transformers
+# torch

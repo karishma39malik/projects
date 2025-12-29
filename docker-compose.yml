@@ -1,0 +1,25 @@
+services:
+  app-api:
+    build: .
+    container_name: app_api_container
+    environment:
+      # host.docker.internal allows connection to a DB running on the host machine
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@host.docker.internal:${DB_PORT}/${DB_NAME}
+    ports:
+      - "8000:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+
+  web-ui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: web_ui_container
+    ports:
+      - "3000:8080"
+    volumes:
+      # Use this named volume for persistent data storage
+      - web_ui_data:/app/backend/data
+
+# Define the named volume at the bottom of the file
+volumes:
+  web_ui_data:

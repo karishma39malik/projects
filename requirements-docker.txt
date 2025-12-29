@@ -1,0 +1,55 @@
+# Core framework for building Retrieval-Augmented Generation (RAG) pipelines.
+llama-index
+
+# Enables document ingestion and parsing using Docling for PDFs and enterprise documents.
+llama-index-readers-docling
+
+# Provides integration to generate vector embeddings using Ollama-hosted models.
+llama-index-embeddings-ollama
+
+# Enables interaction with large language models served via Ollama.
+llama-index-llms-ollama
+
+llama-index-vector-stores-postgres
+llama-index-storage-docstore-postgres
+
+python-dotenv
+psycopg2-binary==2.9.9
+
+# Framework for orchestrating multi-agent workflows with role-based reasoning.
+crewai
+
+crewai-tools
+
+# Removed ragas and datasets due to NumPy conflicts in Docker
+# ragas
+# datasets
+
+rank_bm25
+llama-index-retrievers-bm25
+sentencepiece
+
+# Removed MLX model dependency for lighter Docker image
+# docling-ibm-models[mlx]
+
+# Lightweight API framework used to expose services and query endpoints.
+fastapi
+
+# ASGI server used to run FastAPI applications.
+uvicorn
+
+# Phoenix tracing packages
+
+# Observability platform for monitoring and tracing AI and LLM workflows.
+arize-phoenix
+
+# OpenTelemetry-based tracing integration for Phoenix.
+arize-phoenix-otel
+
+openinference-instrumentation-crewai
+openinference-instrumentation-litellm
+
+# Pin numpy to avoid conflicts
+numpy<2
+
+litellm
